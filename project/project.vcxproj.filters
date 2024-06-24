@@ -71,6 +71,9 @@
     <ClCompile Include="Source\PlayerAI.cpp">
       <Filter>PlayScene\Player</Filter>
     </ClCompile>
+    <ClCompile Include="Source\springAI.cpp">
+      <Filter>PlayScene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\config.h" />
@@ -155,6 +158,9 @@
     </ClInclude>
     <ClInclude Include="Source\PlayerAI.h">
       <Filter>PlayScene\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\springAI.h">
+      <Filter>PlayScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
