@@ -59,17 +59,17 @@
     <ClCompile Include="Source\playScene.cpp">
       <Filter>PlayScene</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Player.cpp">
-      <Filter>PlayScene</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Item.cpp">
-      <Filter>PlayScene</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\PlayerAI.cpp">
-      <Filter>PlayScene</Filter>
+      <Filter>PlayScene\Item</Filter>
     </ClCompile>
     <ClCompile Include="Source\ItemManager.cpp">
-      <Filter>PlayScene</Filter>
+      <Filter>PlayScene\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Player.cpp">
+      <Filter>PlayScene\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PlayerAI.cpp">
+      <Filter>PlayScene\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -144,17 +144,17 @@
     <ClInclude Include="Source\playScene.h">
       <Filter>PlayScene</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Player.h">
-      <Filter>PlayScene</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Item.h">
-      <Filter>PlayScene</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\PlayerAI.h">
-      <Filter>PlayScene</Filter>
+      <Filter>PlayScene\Item</Filter>
     </ClInclude>
     <ClInclude Include="Source\ItemManager.h">
-      <Filter>PlayScene</Filter>
+      <Filter>PlayScene\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Player.h">
+      <Filter>PlayScene\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PlayerAI.h">
+      <Filter>PlayScene\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +175,12 @@
     </Filter>
     <Filter Include="ImGUI">
       <UniqueIdentifier>{5824ee96-3b23-4d6a-b3ec-6d5327bc27bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Item">
+      <UniqueIdentifier>{d6a21f00-63a4-4bef-a7a6-ceac5b4831bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Player">
+      <UniqueIdentifier>{3cc7053c-97ca-48a7-861c-8856b76eda7f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

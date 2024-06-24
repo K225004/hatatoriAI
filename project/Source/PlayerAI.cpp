@@ -15,5 +15,5 @@ void PlayerAI::SetPlayer(Player* inst)
 
 void PlayerAI::Update()
 {
-	player->Input(VGet(1, 0, 0));
+	player->Input(V2Get(1, 0));
 }

@@ -4,16 +4,17 @@
 Item::Item()
 {
 	hImage = LoadGraph("data/textures/item.png");
-	kind = rand() % 5;
-	position = VGet(rand() % (SCREEN_WIDTH - 32), rand() % (SCREEN_HEIGHT - 32), 0);
+	kind = 0;
+	position = V2Get(0, 0);
 }
 
 Item::~Item()
 {
 }
 
-void Item::Create(int type, VECTOR pos)
-{
+void Item::Create(int _kind, Vector2 pos){
+	kind = _kind;
+	position = pos;
 }
 
 void Item::Update()
@@ -22,5 +23,5 @@ void Item::Update()
 
 void Item::Draw()
 {
-	DrawRectGraph(position.x, position.y, kind * 36 + 2, 2, 32, 32, hImage, TRUE);
+	DrawRectGraph(position.x, position.y, kind * 36 + 2, 2, SIZE.x, SIZE.y, hImage, TRUE);
 }
