@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "config.h"
+#include "ItemManager.h"
 
 Player::Player()
 {
@@ -11,14 +12,22 @@ Player::~Player()
 {
 }
 
+void Player::Start(){
+	item = FindGameObject<ItemManager>();
+}
+
 void Player::Update()
 {
 	position += input * 3.0f;
+	if (item != nullptr) {
+		score += item->DoCollider(position, SIZE);
+	}
+
 }
 
 void Player::Draw()
 {
-	DrawRectGraph(position.x, position.y, 2, 2, 32, 32, hImage, TRUE);
+	DrawRectGraph(position.x, position.y, 2, 2, SIZE.x, SIZE.y, hImage, TRUE);
 	char s[32];
 	sprintf_s<32>(s, "SCORE %6d", score);
 	int x = 0;
@@ -50,26 +59,25 @@ void Player::SetChara(int id)
 	switch (id) {
 	case 0:
 		hImage = LoadGraph("data/textures/player1.png");
-		position = VGet(0, 0, 0);
+		position = V2Get(0, 0);
 		break;
 	case 1:
 		hImage = LoadGraph("data/textures/player2.png");
-		position = VGet(SCREEN_WIDTH - 32, 0, 0);
+		position = V2Get(SCREEN_WIDTH - (int)SIZE.x, 0);
 		break;
 	case 2:
 		hImage = LoadGraph("data/textures/player3.png");
-		position = VGet(0, SCREEN_HEIGHT - 32, 0);
+		position = V2Get(0, SCREEN_HEIGHT - (int)SIZE.y);
 		break;
 	case 3:
 		hImage = LoadGraph("data/textures/player4.png");
-		position = VGet(SCREEN_WIDTH - 32, SCREEN_HEIGHT - 32, 0);
+		position = V2Get(SCREEN_WIDTH - (int)SIZE.x, SCREEN_HEIGHT - (int)SIZE.y);
 		break;
 	}
 
 }
 
-void Player::Input(VECTOR dir)
+void Player::Input(Vector2 dir)
 {
-	dir.z = 0;
-	input = VNorm(dir);
+	input = V2Norm(dir);
 }
