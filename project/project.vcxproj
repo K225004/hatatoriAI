@@ -162,7 +162,6 @@
     <ClInclude Include="Source\PlayerAI.h" />
     <ClInclude Include="Source\playScene.h" />
     <ClInclude Include="Source\sceneFactory.h" />
-    <ClInclude Include="Source\springAI.h" />
     <ClInclude Include="Source\timer.h" />
     <ClInclude Include="Source\titleScene.h" />
   </ItemGroup>
@@ -189,7 +188,6 @@
     <ClCompile Include="Source\PlayerAI.cpp" />
     <ClCompile Include="Source\playScene.cpp" />
     <ClCompile Include="Source\sceneFactory.cpp" />
-    <ClCompile Include="Source\springAI.cpp" />
     <ClCompile Include="Source\timer.cpp" />
     <ClCompile Include="Source\titleScene.cpp" />
   </ItemGroup>
