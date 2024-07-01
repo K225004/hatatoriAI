@@ -1,6 +1,10 @@
 #pragma once
 #include "../Library/gameObject.h"
 
+namespace {
+	static const int SCORE_WEIGHT = 250;
+}
+
 class ItemManager;
 
 class Player : public GameObject {

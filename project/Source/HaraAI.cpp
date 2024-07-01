@@ -15,4 +15,5 @@ void HaraAI::Update()
 
 void HaraAI::Draw()
 {
+
 }

@@ -29,27 +29,10 @@ void Player::Draw()
 {
 	DrawRectGraph(position.x, position.y, 2, 2, SIZE.x, SIZE.y, hImage, true, false);
 	char s[32];
-	sprintf_s<32>(s, "SCORE %6d", score);
-	int x = 0;
-	int y = 0;
-	switch (type) {
-	case 0:
-		x = 20;
-		y = 20;
-		break;
-	case 1:
-		x = SCREEN_WIDTH-128;
-		y = 20;
-		break;
-	case 2:
-		x = 20;
-		y = SCREEN_HEIGHT-40;
-		break;
-	case 3:
-		x = SCREEN_WIDTH - 128;
-		y = SCREEN_HEIGHT - 40;
-		break;
-	};
+	sprintf_s<32>(s, "player%d SCORE %6d", type + 1, score);
+	int x = 20 + (type * SCORE_WEIGHT);
+	int y = 20;
+
 	DrawString(x, y, s, GetColor(255, 255, 255), 0);
 }
 
