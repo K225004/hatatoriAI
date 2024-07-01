@@ -74,6 +74,18 @@
     <ClCompile Include="Source\springAI.cpp">
       <Filter>PlayScene</Filter>
     </ClCompile>
+    <ClCompile Include="Source\HaraAI.cpp">
+      <Filter>PlayScene\Player\Hara</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BandouAI.cpp">
+      <Filter>PlayScene\Player\Bandou</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MaedaAI.cpp">
+      <Filter>PlayScene\Player\Maeda</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\NarumiAI.cpp">
+      <Filter>PlayScene\Player\Narumi</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\config.h" />
@@ -162,6 +174,18 @@
     <ClInclude Include="Source\springAI.h">
       <Filter>PlayScene</Filter>
     </ClInclude>
+    <ClInclude Include="Source\HaraAI.h">
+      <Filter>PlayScene\Player\Hara</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BandouAI.h">
+      <Filter>PlayScene\Player\Bandou</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\NarumiAI.h">
+      <Filter>PlayScene\Player\Narumi</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MaedaAI.h">
+      <Filter>PlayScene\Player\Maeda</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
@@ -187,6 +211,18 @@
     </Filter>
     <Filter Include="PlayScene\Player">
       <UniqueIdentifier>{3cc7053c-97ca-48a7-861c-8856b76eda7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Player\Hara">
+      <UniqueIdentifier>{5f390d26-8d75-4a0b-87e6-bba49b93ffee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Player\Bandou">
+      <UniqueIdentifier>{f6c933cd-b8c9-445a-b20d-a60987a6dc3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Player\Maeda">
+      <UniqueIdentifier>{cf04a798-18a6-4c3a-8bc2-0abce68b59d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Player\Narumi">
+      <UniqueIdentifier>{b3e77fc5-3663-4117-b07f-359d053e8fac}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
