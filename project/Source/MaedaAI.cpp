@@ -1,7 +1,7 @@
 #include "MaedaAI.h"
 
-MaedaAI::MaedaAI()
-{
+MaedaAI::MaedaAI(){
+
 }
 
 MaedaAI::~MaedaAI()
@@ -10,7 +10,7 @@ MaedaAI::~MaedaAI()
 
 void MaedaAI::Update()
 {
-	player->Input(V2Get(1, 2));
+	player->Input(target);
 }
 
 void MaedaAI::Draw(){

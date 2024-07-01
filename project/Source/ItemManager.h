@@ -10,6 +10,7 @@ public:
 	void Update() override;
 
 	int DoCollider(const Vector2& pPos, const Vector2& pSize);
+	std::list<Item*> GetItemList() { return items; }
 private:
 	const int ITEM_MAX = 10;
 	std::list<Item*> items;
