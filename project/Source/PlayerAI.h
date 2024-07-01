@@ -9,4 +9,5 @@ public:
 	void SetPlayer(Player* inst);
 	void Update();
 	Player* player;
+	Vector2 target;
 };

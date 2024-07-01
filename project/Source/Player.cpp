@@ -18,7 +18,7 @@ void Player::Start(){
 
 void Player::Update()
 {
-	position += input * 3.0f;
+	//position += input * 3.0f;
 	if (item != nullptr) {
 		score += item->DoCollider(position, SIZE);
 	}
@@ -65,5 +65,18 @@ void Player::SetChara(int id)
 
 void Player::Input(Vector2 dir)
 {
-	input = V2Norm(dir);
+	//input = V2Norm(dir);
+	if (dir.x > position.x) {
+		position.x++;
+	}
+	else if (dir.x < position.x) {
+		position.x--;
+	}
+	else if (dir.y > position.y) {
+		position.y++;
+	}
+	else if (dir.y < position.y) {
+		position.y--;
+	}
+
 }
