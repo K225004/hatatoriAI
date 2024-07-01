@@ -1,7 +1,7 @@
 #include "PlayerAI.h"
 
-PlayerAI::PlayerAI()
-{
+PlayerAI::PlayerAI(){
+	itemmanager = FindGameObject<ItemManager>();
 }
 
 PlayerAI::~PlayerAI()
