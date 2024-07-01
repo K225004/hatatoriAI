@@ -23,5 +23,5 @@ void Item::Update()
 
 void Item::Draw()
 {
-	DrawRectGraph(position.x, position.y, kind * 36 + 2, 2, SIZE.x, SIZE.y, hImage, TRUE);
+	DrawRectGraph(position.x, position.y, kind * 36 + 2, 2, SIZE.x, SIZE.y, hImage, true, false);
 }
