@@ -2,6 +2,7 @@
 #include "../Library/gameObject.h"
 #include "Player.h"
 #include"ItemManager.h"
+#include"Item.h"
 
 class PlayerAI : public GameObject {
 public:

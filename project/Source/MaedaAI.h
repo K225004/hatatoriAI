@@ -11,5 +11,7 @@ public:
 	void Draw();
 
 private:
+	std::list<float> score;
+	std::list<Item*> items;
 };
 

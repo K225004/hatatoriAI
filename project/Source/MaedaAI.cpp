@@ -1,15 +1,20 @@
 #include "MaedaAI.h"
 
 MaedaAI::MaedaAI(){
+	score.clear();
+	items.clear();
+}
+
+MaedaAI::~MaedaAI(){
 
 }
 
-MaedaAI::~MaedaAI()
-{
-}
-
-void MaedaAI::Update()
-{
+void MaedaAI::Update(){
+	score.clear();
+	for (int i; i < items.size(); i++) {
+		(*std::next(itemmanager->GetItemList().begin(), i));
+	}
+	
 	player->Input(target);
 }
 
