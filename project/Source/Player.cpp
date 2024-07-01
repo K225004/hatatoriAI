@@ -73,8 +73,11 @@ void Player::SetChara(int id)
 		hImage = LoadGraph("data/textures/player4.png");
 		position = V2Get(SCREEN_WIDTH - (int)SIZE.x, SCREEN_HEIGHT - (int)SIZE.y);
 		break;
+	default:
+		hImage = LoadGraph("data/textures/player5.png");
+		position = V2Get((SCREEN_WIDTH / 2) - (int)SIZE.x, (SCREEN_HEIGHT / 2) - (int)SIZE.y);
+		break;
 	}
-
 }
 
 void Player::Input(Vector2 dir)

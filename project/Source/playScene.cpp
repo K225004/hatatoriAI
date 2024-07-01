@@ -12,8 +12,8 @@
 
 PlayScene::PlayScene()
 {
-	Player* inst[5];
-	for (int i = 0; i < 5; i++) {
+	Player* inst[PLAYER::MAX];
+	for (int i = 0; i < PLAYER::MAX; i++) {
 		inst[i] = Instantiate<Player>();
 		inst[i]->SetChara(i);
 	}
