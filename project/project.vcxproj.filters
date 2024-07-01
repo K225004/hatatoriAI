@@ -156,11 +156,11 @@
     <ClInclude Include="Source\Player.h">
       <Filter>PlayScene\Player</Filter>
     </ClInclude>
-    <ClInclude Include="Source\PlayerAI.h">
-      <Filter>PlayScene\Player</Filter>
-    </ClInclude>
     <ClInclude Include="Source\springAI.h">
       <Filter>PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PlayerAI.h">
+      <Filter>PlayScene\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

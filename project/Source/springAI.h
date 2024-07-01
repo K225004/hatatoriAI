@@ -1,5 +1,6 @@
 #pragma once
 #include "../Library/gameObject.h"
+#include "Player.h"
 
 class Item;
 
@@ -7,9 +8,10 @@ class SpringAI : public GameObject {
 public:
 	SpringAI();
 	~SpringAI();
+	void SetPlayer(Player* inst);
 	void Update();
-	void Draw();
 private:
+	Player* player;
 	std::list<Item*> items;
 
 	enum PLAYERACTION {

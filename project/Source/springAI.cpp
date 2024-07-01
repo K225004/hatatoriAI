@@ -8,10 +8,15 @@ SpringAI::~SpringAI()
 {
 }
 
-void SpringAI::Update()
+void SpringAI::SetPlayer(Player* inst)
 {
+	player = inst;
 }
 
-void SpringAI::Draw()
+void SpringAI::Update()
 {
+	//player->Input(V2Get(1, 0));
+	for (Item* item : items) {
+
+	}
 }
