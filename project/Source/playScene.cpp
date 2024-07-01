@@ -3,18 +3,32 @@
 #include "DebugScreen.h"
 #include <DxLib.h>
 #include "Player.h"
-#include "PlayerAI.h"
 #include "ItemManager.h"
+#include"HaraAI.h"
+#include"BandouAI.h"
+#include"MaedaAI.h"
+#include"NarumiAI.h"
+#include"springAI.h"
 
 PlayScene::PlayScene()
 {
-	Player* inst[4];
-	for (int i = 0; i < 4; i++) {
+	Player* inst[5];
+	for (int i = 0; i < 5; i++) {
 		inst[i] = Instantiate<Player>();
 		inst[i]->SetChara(i);
 	}
-	PlayerAI* ai = Instantiate<PlayerAI>();
-	ai->SetPlayer(inst[0]);
+	ai.emplace_back(Instantiate<HaraAI>());
+	ai.emplace_back(Instantiate<SpringAI>());
+	ai.emplace_back(Instantiate<BandouAI>());
+	ai.emplace_back(Instantiate<NarumiAI>());
+	ai.emplace_back(Instantiate<MaedaAI>());
+
+	int i = 0;
+	for (auto it : ai) {
+		it->SetPlayer(inst[i]);
+		i++;
+	}
+	
 	Instantiate<ItemManager>();
 }
 

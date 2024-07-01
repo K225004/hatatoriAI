@@ -1,7 +1,8 @@
 #pragma once
 #include "../Library/gameObject.h"
+#include"PlayerAI.h"
 
-class BandouAI : public GameObject {
+class BandouAI : public PlayerAI {
 public:
 	BandouAI();
 	~BandouAI();
