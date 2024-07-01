@@ -8,6 +8,5 @@ public:
 	~PlayerAI();
 	void SetPlayer(Player* inst);
 	void Update();
-private:
 	Player* player;
 };

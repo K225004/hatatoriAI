@@ -1,10 +1,12 @@
 #pragma once
 #include "../Library/gameObject.h"
 #include "Player.h"
+#include"PlayerAI.h"
+
 
 class Item;
 
-class SpringAI : public GameObject {
+class SpringAI : public PlayerAI {
 public:
 	SpringAI();
 	~SpringAI();

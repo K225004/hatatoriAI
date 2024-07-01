@@ -1,7 +1,8 @@
 #pragma once
 #include "../Library/gameObject.h"
+#include"PlayerAI.h"
 
-class NarumiAI : public GameObject {
+class NarumiAI : public PlayerAI {
 public:
 	NarumiAI();
 	~NarumiAI();

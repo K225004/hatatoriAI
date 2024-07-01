@@ -1,5 +1,6 @@
 #pragma once
 #include "../Library/sceneBase.h"
+#include"PlayerAI.h"
 
 class PlayScene : public SceneBase {
 public:
@@ -8,4 +9,5 @@ public:
 	void Update() override;
 	void Draw() override;
 private:
+	std::list<PlayerAI*> ai;
 };
