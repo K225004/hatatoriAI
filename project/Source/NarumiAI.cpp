@@ -40,7 +40,7 @@ void NarumiAI::SearchTarget(){
 		point = distance * scoreRate;
 		if (minPoint > point) {
 			minPoint = point;
-			targetPos = center;
+			target = center;
 		}
 	}
 }

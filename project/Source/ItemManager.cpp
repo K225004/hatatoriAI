@@ -17,7 +17,7 @@ ItemManager::~ItemManager() {
 }
 
 void ItemManager::Start(){
-	//playerAis = GetScene()->FindGameObjects<PlayerAi>();
+	playerAis = FindGameObjects<PlayerAI>();
 }
 
 void ItemManager::Update(){
@@ -45,7 +45,7 @@ void ItemManager::SpownItem(Item* item){
 	position.y = GetRand(SCREEN_HEIGHT);
 	int kind = GetRand(ITEMKIND_MAX - 1);
 	item->Create(kind, position, SCORE[kind]);
-	//for (auto itr = playerAis.begin(); itr != playerAis.end(); itr++) {
-	//	
-	//}
+	for (auto itr = playerAis.begin(); itr != playerAis.end(); itr++) {
+		(*itr)->SpownObject();
+	}
 }

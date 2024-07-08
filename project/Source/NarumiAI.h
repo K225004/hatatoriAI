@@ -10,5 +10,4 @@ public:
 	void Draw();
 private:
 	void SearchTarget();
-	Vector2 targetPos;
 };

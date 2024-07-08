@@ -7,6 +7,8 @@ Bomb::Bomb(){
 	isExplosion = false;
 	blastRange - 0;
 	position = V2Get(0, 0);
+	blastRange = 0.0f;
+	isEraseFlg = false;
 }
 
 Bomb::~Bomb(){

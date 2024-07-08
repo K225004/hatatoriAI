@@ -2,7 +2,7 @@
 #include "../Library/gameObject.h"
 
 class Item;
-class PlayerAi;
+class PlayerAI;
 
 class ItemManager : public GameObject {
 public:
@@ -23,5 +23,5 @@ private:
 
 	const int SCORE[ITEMKIND_MAX] = { 100,300,500,1000 };
 
-	//std::list<PlayerAi*>playerAis;
+	std::list<PlayerAI*>playerAis;
 };

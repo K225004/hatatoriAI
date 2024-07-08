@@ -4,6 +4,7 @@
 #include"ItemManager.h"
 #include"Item.h"
 
+class BombManager;
 
 class PlayerAI : public GameObject {
 public:
@@ -16,7 +17,7 @@ public:
 
 	Player* player;
 	ItemManager* itemmanager;
+	BombManager* bombManager;
 	Vector2 target;
-protected:
 	virtual void SpownObject() {};
 };
