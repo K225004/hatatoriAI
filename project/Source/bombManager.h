@@ -8,6 +8,7 @@ public:
 	BombManager();
 	~BombManager();
 	void Update() override;
+	std::list<Bomb*> GetBombList() { return bombs; }
 private:
 	int timer;
 	int SPOWN_TIME = 60 * 5;//—N‚©‚¹‚éŠÔ

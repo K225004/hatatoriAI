@@ -6,15 +6,17 @@ Item::Item()
 	hImage = LoadGraph("data/textures/item.png");
 	kind = 0;
 	position = V2Get(0, 0);
+	score = 0;
 }
 
 Item::~Item()
 {
 }
 
-void Item::Create(int _kind, Vector2 pos){
+void Item::Create(const int& _kind, const Vector2& pos, const int& _score){
 	kind = _kind;
 	position = pos;
+	score = _score;
 }
 
 void Item::Update()

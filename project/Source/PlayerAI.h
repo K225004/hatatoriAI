@@ -4,6 +4,7 @@
 #include"ItemManager.h"
 #include"Item.h"
 
+
 class PlayerAI : public GameObject {
 public:
 	PlayerAI();
