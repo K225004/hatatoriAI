@@ -22,11 +22,16 @@ struct Point{
 	/// 価値
 	/// </summary>
 	float value;
+	/// <summary>
+	/// アイテム番号
+	/// </summary>
+	int num;
 	Point() {
 		abspos = Vector2(0, 0);
 		pos = Vector2(0, 0);
 		score = 0;
 		value = 0;
+		num = 0;
 	}
 };
 
@@ -38,9 +43,9 @@ public:
 	void Update();
 	void Draw();
 
-private:
+	void SpownObject()override;
 
-	void SetValue();
+private:
 
 	Point targetpoint;
 
