@@ -5,6 +5,7 @@ MaedaAI::MaedaAI(){
 	items.clear();
 	itemsvalue.clear();
 	targetpoint = Point();
+	targetpoint.value = 10000.0f;
 }
 
 MaedaAI::~MaedaAI(){
@@ -15,12 +16,15 @@ void MaedaAI::Update(){
 	score.clear();
 	SetValue();
 	for (int i = 0; i < itemsvalue.size(); i++) {
+		if ((*std::next(itemsvalue.begin(), i)).value < targetpoint.value) {
+			targetpoint = (*std::next(itemsvalue.begin(), i));
+		}
 	}
-	player->Input(target);
+	player->Input(targetpoint.pos);
 }
 
 void MaedaAI::SetValue(){
-	for (int i = 0; i < items.size(); i++) {
+	for (int i = 0; i < itemmanager->GetItemList().size(); i++) {
 		Item* item = (*std::next(itemmanager->GetItemList().begin(), i));
 		itemsvalue.emplace_back();
 		itemsvalue.back().pos = Vector2(item->GetPosition().x, item->GetPosition().y);

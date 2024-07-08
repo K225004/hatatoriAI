@@ -1,6 +1,9 @@
 #include "PlayerAI.h"
 
 PlayerAI::PlayerAI(){
+}
+
+void PlayerAI::Start() {
 	itemmanager = FindGameObject<ItemManager>();
 }
 

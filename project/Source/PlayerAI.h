@@ -11,6 +11,9 @@ public:
 	~PlayerAI();
 	void SetPlayer(Player* inst);
 	void Update();
+
+	void Start()override;
+
 	Player* player;
 	ItemManager* itemmanager;
 	Vector2 target;
