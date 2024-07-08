@@ -10,11 +10,13 @@ class SpringAI : public PlayerAI {
 public:
 	SpringAI();
 	~SpringAI();
-	void SetPlayer(Player* inst);
 	void Update();
+	void Draw();
 private:
-	Player* player;
+	PlayerAI* playerAI;
 	std::list<Item*> items;
+
+	VECTOR onChaseItemPos;
 
 	enum PLAYERACTION {
 		PA_IDLE,
@@ -23,6 +25,8 @@ private:
 		PA_VER_MOV_U,
 		PA_VER_MOV_D,
 	};
+
+	PLAYERACTION pAction;
 
 	enum PLAYERSTATE {
 		PS_DO_NOTHING,
