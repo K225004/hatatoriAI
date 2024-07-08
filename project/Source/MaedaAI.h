@@ -1,6 +1,8 @@
 #pragma once
 #include "../Library/gameObject.h"
 #include"PlayerAI.h"
+#include"bombManager.h"
+#include"bomb.h"
 
 
 struct Point{
@@ -42,6 +44,8 @@ public:
 	~MaedaAI();
 	void Update();
 	void Draw();
+
+	void Start()override;
 
 	void SpownObject()override;
 
