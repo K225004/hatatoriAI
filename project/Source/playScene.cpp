@@ -4,6 +4,7 @@
 #include <DxLib.h>
 #include "Player.h"
 #include "ItemManager.h"
+#include "bombManager.h"
 #include"HaraAI.h"
 #include"BandouAI.h"
 #include"MaedaAI.h"
@@ -30,6 +31,7 @@ PlayScene::PlayScene()
 	}
 	
 	Instantiate<ItemManager>();
+	Instantiate<BombManager>();
 }
 
 

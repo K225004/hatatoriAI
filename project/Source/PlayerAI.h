@@ -14,4 +14,6 @@ public:
 	Player* player;
 	ItemManager* itemmanager;
 	Vector2 target;
+protected:
+	virtual void SpownObject() {};
 };

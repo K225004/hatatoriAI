@@ -2,11 +2,13 @@
 #include "../Library/gameObject.h"
 
 class Item;
+class PlayerAi;
 
 class ItemManager : public GameObject {
 public:
 	ItemManager();
 	~ItemManager();
+	void Start()override;
 	void Update() override;
 
 	int DoCollider(const Vector2& pPos, const Vector2& pSize);
@@ -21,5 +23,5 @@ private:
 
 	const int SCORE[ITEMKIND_MAX] = { 100,300,500,1000 };
 
-
+	std::list<PlayerAi*>playerAis;
 };
