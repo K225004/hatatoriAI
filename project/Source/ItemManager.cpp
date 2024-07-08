@@ -1,6 +1,7 @@
 #include "ItemManager.h"
 #include "Item.h"
 #include "config.h"
+#include "PlayerAI.h"
 
 ItemManager::ItemManager() {
 
@@ -9,12 +10,14 @@ ItemManager::ItemManager() {
 		*itr = Instantiate<Item>();
 		SpownItem(*itr);
 	}
-
-	items.back()->Create(1, V2Get(SCREEN_WIDTH / 2, 0));
 }
 
 ItemManager::~ItemManager() {
 
+}
+
+void ItemManager::Start(){
+	playerAis = FindGameObjects<PlayerAI>();
 }
 
 void ItemManager::Update(){
@@ -40,5 +43,9 @@ void ItemManager::SpownItem(Item* item){
 	Vector2 position;
 	position.x = GetRand(SCREEN_WIDTH);
 	position.y = GetRand(SCREEN_HEIGHT);
-	item->Create(GetRand(ITEMKIND_MAX - 1), position);
+	int kind = GetRand(ITEMKIND_MAX - 1);
+	item->Create(kind, position, SCORE[kind]);
+	for (auto itr = playerAis.begin(); itr != playerAis.end(); itr++) {
+		(*itr)->SpownObject();
+	}
 }

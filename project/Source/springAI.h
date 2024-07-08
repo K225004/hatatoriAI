@@ -17,6 +17,7 @@ private:
 	std::list<Item*> items;
 
 	VECTOR onChaseItemPos;
+	VECTOR recentlyPlacedBombPos;
 
 	enum PLAYERACTION {
 		PA_IDLE,

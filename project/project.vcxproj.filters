@@ -86,6 +86,12 @@
     <ClCompile Include="Source\springAI.cpp">
       <Filter>PlayScene\Player\Haru</Filter>
     </ClCompile>
+    <ClCompile Include="Source\bomb.cpp">
+      <Filter>PlayScene\Bomb</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\bombManager.cpp">
+      <Filter>PlayScene\Bomb</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\config.h" />
@@ -186,6 +192,12 @@
     <ClInclude Include="Source\springAI.h">
       <Filter>PlayScene\Player\Haru</Filter>
     </ClInclude>
+    <ClInclude Include="Source\bomb.h">
+      <Filter>PlayScene\Bomb</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\bombManager.h">
+      <Filter>PlayScene\Bomb</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
@@ -226,6 +238,9 @@
     </Filter>
     <Filter Include="PlayScene\Player\Haru">
       <UniqueIdentifier>{e683d60f-4e20-4567-8c1f-54bfa2f2a28a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Bomb">
+      <UniqueIdentifier>{e88818f1-e7a8-4654-805b-e6f08675aced}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

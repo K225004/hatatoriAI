@@ -2,12 +2,15 @@
 #include "../Library/gameObject.h"
 
 class Bomb;
+class PlayerAI;
 
 class BombManager : public GameObject {
 public:
 	BombManager();
 	~BombManager();
 	void Update() override;
+	void Start()override;
+	std::list<Bomb*> GetBombList() { return bombs; }
 private:
 	int timer;
 	int SPOWN_TIME = 60 * 5;//—N‚©‚¹‚éŽžŠÔ
@@ -18,4 +21,5 @@ private:
 	const int RESIDUAL_TIME = 60 * 2;//”š•—Žc—¯ŽžŠÔ
 	const int BLAST_RANGE = 32 * 5 / 2;//”š•—‚Ì”ÍˆÍ
 	
+	std::list<PlayerAI*>playerAis;
 };

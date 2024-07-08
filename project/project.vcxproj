@@ -153,6 +153,8 @@
     <ClInclude Include="Library\sceneManager.h" />
     <ClInclude Include="Library\time.h" />
     <ClInclude Include="Source\BandouAI.h" />
+    <ClInclude Include="Source\bomb.h" />
+    <ClInclude Include="Source\bombManager.h" />
     <ClInclude Include="Source\bootScene.h" />
     <ClInclude Include="Source\component.h" />
     <ClInclude Include="Source\config.h" />
@@ -186,6 +188,8 @@
     <ClCompile Include="Library\sceneManager.cpp" />
     <ClCompile Include="Library\time.cpp" />
     <ClCompile Include="Source\BandouAI.cpp" />
+    <ClCompile Include="Source\bomb.cpp" />
+    <ClCompile Include="Source\bombManager.cpp" />
     <ClCompile Include="Source\bootScene.cpp" />
     <ClCompile Include="Source\debugScreen.cpp" />
     <ClCompile Include="Source\HaraAI.cpp" />

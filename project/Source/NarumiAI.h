@@ -9,5 +9,5 @@ public:
 	void Update();
 	void Draw();
 private:
-
+	void SearchTarget();
 };
