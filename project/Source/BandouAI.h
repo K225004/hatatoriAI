@@ -2,12 +2,14 @@
 #include "../Library/gameObject.h"
 #include"PlayerAI.h"
 
-class BandouAI : public PlayerAI {
+class BandouAI : public PlayerAI 
+{
 public:
 	BandouAI();
 	~BandouAI();
 	void Update();
 	void Draw();
+	void Set();
 private:
 	
 };
