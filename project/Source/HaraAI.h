@@ -3,7 +3,8 @@
 #include"PlayerAI.h"
 
 namespace {
-	static const float MAGNIFICATION = 0.1f;
+	static const int SEARCH_NEAR = 200;	//サーチ	半径
+	static const int ADJUSTMENT_DISTANCE = 300;	//調整が入る距離のライン
 }
 
 class HaraAI : public PlayerAI {

@@ -17,7 +17,10 @@ void HaraAI::Update()
 
 void HaraAI::Draw()
 {
+	//確認用
 	//DrawFormatString(10, 200, 0xffffff, "%.2f", distance);
+	//DrawCircle(player->Position().x, player->Position().y, SEARCH_NEAR, 0xff0000, false);
+	//DrawCircle(target.x, target.y, 32, 0xff0000, true, true);
 }
 
 void HaraAI::Set()
@@ -36,17 +39,22 @@ void HaraAI::Set()
 		distanceX = max(distanceX, -distanceX);
 		distanceY = max(distanceY, -distanceY);
 
-		//倍率
-		float magnification = item->GetKind() * MAGNIFICATION;
-
 		//総合
-		float nowDistance = distanceX + distanceY - magnification;
+		float nowDistance = distanceX + distanceY;
 
 		//判定
-		if (i == 0 || distance > nowDistance) {
-			distance = nowDistance;
-			itemPos = item->GetPosition();
+		//点数が高い方
+		if (item->GetKind() >= 500) {
+			if (distance > nowDistance) {
+				distance = nowDistance;
+				itemPos = item->GetPosition();
+			}
 		}		
+		//距離が近い方
+		else if (distance == 0.0f || (nowDistance < distance && nowDistance <= SEARCH_NEAR)) {
+			distance = nowDistance;
+			itemPos = item->GetPosition();			
+		}	
 	}
 
 	target = itemPos;
