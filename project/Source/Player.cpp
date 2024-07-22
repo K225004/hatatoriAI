@@ -4,12 +4,16 @@
 
 Player::Player()
 {
+	hFont = -1;
 	score = 0;
 	type = -1;
+	isStop = false;
+	isVictory = false;
 }
 
 Player::~Player()
 {
+	DeleteFontToHandle(hFont);
 }
 
 void Player::Start(){
@@ -34,6 +38,13 @@ void Player::Draw()
 	int y = 20;
 
 	DrawString(x, y, s, GetColor(255, 255, 255), 0);
+
+	
+	if (isVictory) {
+		//hFont = CreateFontToHandle(NULL, 64, 3);
+		DrawFormatString(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 0xffffff, "player%d WIN!! ", type + 1);
+		//DrawFormatStringToHandle(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 0xffffff, hFont, "player%d WIN!! ", type + 1);
+	}
 }
 
 void Player::SetChara(int id)
@@ -66,17 +77,18 @@ void Player::SetChara(int id)
 void Player::Input(Vector2 dir)
 {
 	//input = V2Norm(dir);
-	if (dir.x > position.x) {
-		position.x++;
+	if (!isStop) {
+		if (dir.x > position.x) {
+			position.x++;
+		}
+		else if (dir.x < position.x) {
+			position.x--;
+		}
+		else if (dir.y > position.y) {
+			position.y++;
+		}
+		else if (dir.y < position.y) {
+			position.y--;
+		}
 	}
-	else if (dir.x < position.x) {
-		position.x--;
-	}
-	else if (dir.y > position.y) {
-		position.y++;
-	}
-	else if (dir.y < position.y) {
-		position.y--;
-	}
-
 }

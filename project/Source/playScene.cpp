@@ -13,7 +13,6 @@
 
 PlayScene::PlayScene()
 {
-	Player* inst[PLAYER::MAX];
 	for (int i = 0; i < PLAYER::MAX; i++) {
 		inst[i] = Instantiate<Player>();
 		inst[i]->SetChara(i);
@@ -32,6 +31,8 @@ PlayScene::PlayScene()
 	
 	Instantiate<ItemManager>();
 	Instantiate<BombManager>();
+
+	isFinish = false;
 }
 
 
@@ -44,11 +45,23 @@ void PlayScene::Update()
 	if (CheckHitKey(KEY_INPUT_T)) {
 		SceneManager::ChangeScene("TitleScene");
 	}
+
+	for (int i = 0; i < PLAYER::MAX; i++) {
+		if (inst[i]->GetScore() >= 5000) {
+			inst[i]->SetVictory(true);
+			isFinish = true;
+		}
+		if (isFinish) {
+			inst[i]->SetStop(true);
+		}
+	}
+
 	SceneBase::Update();
 }
 
 void PlayScene::Draw()
 {
+
 	SceneBase::Draw();
 
 //	DrawString(0, 0, "PLAY SCENE", GetColor(255, 255, 255));

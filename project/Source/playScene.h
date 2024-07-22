@@ -14,4 +14,6 @@ public:
 	void Draw() override;
 private:
 	std::list<PlayerAI*> ai;
+	Player* inst[PLAYER::MAX];
+	bool isFinish;
 };
