@@ -13,6 +13,7 @@ MaedaAI::~MaedaAI(){
 }
 
 void MaedaAI::Update(){
+	SpownObject();
 	score.clear();
 	for (int i = 0; i < itemsvalue.size(); i++) {
 		if (targetpoint.pos.x == player->Position().x && targetpoint.pos.y == player->Position().y) {
@@ -22,11 +23,9 @@ void MaedaAI::Update(){
 		if ((*std::next(itemsvalue.begin(), i)).value < targetpoint.value) {
 			targetpoint = (*std::next(itemsvalue.begin(), i));
 		}
-		if (bombManager->GetBombList().size() > 0) {
-			for (auto it : bombManager->GetBombList()) {
-				if ((it->GetPosition().x + it->GetBlastRange() > player->Position().x && it->GetPosition().x - it->GetBlastRange() < player->Position().x + 32) && (it->GetPosition().y + it->GetBlastRange() > player->Position().y && it->GetPosition().y - it->GetBlastRange() < player->Position().y + 32)) {
-
-				}
+		for (auto it : bombManager->GetBombList()) {
+			if ((it->GetPosition().x + it->GetBlastRange() > player->Position().x && it->GetPosition().x - it->GetBlastRange() < player->Position().x + 32) && (it->GetPosition().y + it->GetBlastRange() > player->Position().y && it->GetPosition().y - it->GetBlastRange() < player->Position().y + 32)) {
+			
 			}
 		}
 	}
@@ -48,17 +47,34 @@ void MaedaAI::SpownObject(){
 			itemsvalue.back().abspos.y = -itemsvalue.back().abspos.y;
 		}
 		itemsvalue.back().score = item->GetScore();
-		itemsvalue.back().value = (itemsvalue.back().abspos.x + itemsvalue.back().abspos.y * 2) - (itemsvalue.back().score * 0.7);
+		itemsvalue.back().value = ((itemsvalue.back().abspos.x + itemsvalue.back().abspos.y) * 2) - (itemsvalue.back().score * 0.4);
+		
+		Vector2 playerspos = Vector2(0,0);
+
+		for (auto it : playerlist) {
+			playerspos  = Vector2(it->Position().x - item->GetPosition().x, it->Position().y - item->GetPosition().y);
+			if (playerspos.x < 0) {
+				playerspos.x = -playerspos.x;
+			}
+			if (playerspos.y < 0) {
+				playerspos.y = -playerspos.y;
+			}
+			float valu = playerspos.x + playerspos.y;
+			itemsvalue.back().value -= valu * 0.4;
+		}
+		itemsvalue.back().value *= 0.001;
 	}
 }
 
 
 void MaedaAI::Draw(){
-	DrawFormatString(100,300,GetColor(100,100,0),"v2 x %f y %f ",V2Norm(V2Get(1, 2)).x, V2Norm(V2Get(1, 1)).y);
+	//DrawFormatString(100,300,GetColor(100,100,0),"v2 x %f y %f ", targetpoint.pos.x, targetpoint.pos.y);
 }
 
 void MaedaAI::Start(){
 	PlayerAI::Start();
+	playerlist = FindGameObjects<Player>();
+	playerlist.remove(player);
 	SpownObject();
 }
 

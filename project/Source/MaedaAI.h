@@ -56,5 +56,6 @@ private:
 	std::list<float> score;
 	std::list<Item*> items;
 	std::list<Point> itemsvalue;
+	std::list<Player*> playerlist;
 };
 
