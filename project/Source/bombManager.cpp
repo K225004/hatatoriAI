@@ -12,6 +12,7 @@ BombManager::~BombManager(){
 }
 
 void BombManager::Update(){
+	return;
 	timer++;
 	if (timer >= SPOWN_TIME) {
 		timer = 0;
@@ -43,6 +44,23 @@ void BombManager::SpownBomb(){
 	for (auto itr = playerAis.begin(); itr != playerAis.end(); itr++) {
 		(*itr)->SpownObject();
 	}
+}
+
+bool BombManager::DoCollider(const Vector2& pPos, const Vector2& pSize){
+	Vector2 bPos;
+	float blastRange;
+	for (auto itr = bombs.begin(); itr != bombs.end(); itr++) {
+		if (!(*itr)->GetIsExplosion()) {
+			continue;
+		}
+		bPos = (*itr)->GetPosition();
+		blastRange = (*itr)->GetBlastRange();
+		if (pPos.x < bPos.x + 32 + blastRange && pPos.x + pSize.x>bPos.x - blastRange &&
+			pPos.y<bPos.y + 32 + blastRange && pPos.y + pSize.y>bPos.y - blastRange) {
+			return true;
+		}
+	}
+	return false;
 }
 
 

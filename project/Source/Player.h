@@ -19,6 +19,7 @@ public:
 		return position;
 	}
 	void Input(Vector2 dir);
+	void Input2(Vector2 dir);
 
 	int GetScore() { return score; }
 	void SetStop(bool _stop) {
@@ -40,4 +41,5 @@ private:
 	bool isVictory;
 
 	ItemManager* item = nullptr;
+	
 };

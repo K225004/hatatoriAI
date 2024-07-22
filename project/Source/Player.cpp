@@ -92,3 +92,15 @@ void Player::Input(Vector2 dir)
 		}
 	}
 }
+
+void Player::Input2(Vector2 dir) {
+	if (!isStop) {
+		float direction = atan2f(dir.x, dir.y);
+		MATRIX mrot = MGetRotY(direction);
+		VECTOR move = VGet(0, 0, 1.0f);
+		move *= mrot;
+
+		position.x += move.x;
+		position.y += move.z;
+	}
+}

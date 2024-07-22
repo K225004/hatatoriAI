@@ -24,4 +24,6 @@ private:
 	const int SCORE[ITEMKIND_MAX] = { 100,300,500,1000 };
 
 	std::list<PlayerAI*>playerAis;
+
+	Vector2 itemSize;
 };

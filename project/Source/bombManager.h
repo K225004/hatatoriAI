@@ -22,4 +22,5 @@ private:
 	const int BLAST_RANGE = 32 * 5 / 2;//”š•—‚Ì”ÍˆÍ
 	
 	std::list<PlayerAI*>playerAis;
+	bool DoCollider(const Vector2& pPos, const Vector2& pSize);
 };

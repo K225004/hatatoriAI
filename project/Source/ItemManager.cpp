@@ -10,6 +10,7 @@ ItemManager::ItemManager() {
 		*itr = Instantiate<Item>();
 		SpownItem(*itr);
 	}
+	itemSize = items.back()->GetSize();
 }
 
 ItemManager::~ItemManager() {
@@ -26,11 +27,9 @@ void ItemManager::Update(){
 
 int ItemManager::DoCollider(const Vector2& pPos, const Vector2& pSize){
 	Vector2 iPos;
-	Vector2 iSize;
 	for (auto itr = items.begin(); itr != items.end(); itr++) {
 		iPos = (*itr)->GetPosition();
-		iSize= (*itr)->GetSize();
-		if (pPos.x < iPos.x + iSize.x && pPos.x + pSize.x>iPos.x && pPos.y<iPos.y + iSize.y && pPos.y + pSize.y>iPos.y) {
+		if (pPos.x < iPos.x + itemSize.x && pPos.x + pSize.x>iPos.x && pPos.y<iPos.y + itemSize.y && pPos.y + pSize.y>iPos.y) {
 			int score = SCORE[(*itr)->GetKind()];
 			SpownItem(*itr);
 			return score;
@@ -41,8 +40,10 @@ int ItemManager::DoCollider(const Vector2& pPos, const Vector2& pSize){
 
 void ItemManager::SpownItem(Item* item){
 	Vector2 position;
-	position.x = GetRand(SCREEN_WIDTH);
-	position.y = GetRand(SCREEN_HEIGHT);
+	int X = SCREEN_WIDTH - (int)itemSize.x;
+	int Y = SCREEN_HEIGHT - (int)itemSize.y;
+	position.x = (float)GetRand(X);
+	position.y = (float)GetRand(Y);
 	int kind = GetRand(ITEMKIND_MAX - 1);
 	item->Create(kind, position, SCORE[kind]);
 	for (auto itr = playerAis.begin(); itr != playerAis.end(); itr++) {
