@@ -66,7 +66,7 @@ void SpringAI::Update()
 }
 
 void SpringAI::Draw() {
-	DrawFormatString(100, 500, GetColor(255, 255, 0), "item chase pos %f x %f y", onChaseItemPos.x, onChaseItemPos.y);
+	/*DrawFormatString(100, 500, GetColor(255, 255, 0), "item chase pos %f x %f y", onChaseItemPos.x, onChaseItemPos.y);
 	DrawFormatString(100, 520, GetColor(255, 255, 0), "player pos %f x %f y", player->Position().x, player->Position().y);
 	switch (pAction) {
 	case PLAYERACTION::PA_IDLE:
@@ -84,5 +84,5 @@ void SpringAI::Draw() {
 	case PLAYERACTION::PA_VER_MOV_D:
 		DrawString(100, 540, "VERTICAL MOVE D", GetColor(255, 255, 255));
 		break;
-	}
+	}*/
 }
